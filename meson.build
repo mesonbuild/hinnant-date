@@ -1,9 +1,9 @@
 project('hinnant-date', ['cpp'],
-       default_options: ['cpp_stderr=c++17'])
+       default_options: ['cpp_std=c++17'])
 
 pkg = import('pkgconfig')
 
-thread_dep = dependency('Threads')
+thread_dep = dependency('threads')
 
 header_files = files(
   'include/date/chrono_io.h',
@@ -33,9 +33,9 @@ endif
 
 i = include_directories('include')
 tz_lib = library('tz', 'src/tz.cpp',
-		 include_directories: i,
-		 cpp_args: defines + public_defines,
-		 dependencies: deps)
+     include_directories: i,
+     cpp_args: defines + public_defines,
+     dependencies: deps)
 
 tz_dep = declare_dependency(
   compile_args: public_defines,
