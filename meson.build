@@ -32,6 +32,10 @@ if get_option('use_tzdb_in_dot')
   defines += ['-DINSTALL=.']
 endif
 
+if get_option('disable_string_view')
+  defines += ['-DHAS_STRING_VIEW=0']
+endif
+
 i = include_directories('include')
 tz_lib = library('tz', 'src/tz.cpp',
      include_directories: i,

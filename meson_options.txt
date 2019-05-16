@@ -3,3 +3,6 @@ option('use_system_tzdb', type: 'boolean', value: false,
 
 option('use_tzdb_in_dot', type: 'boolean', value: false,
        description: 'Save the timezone database init the current folder')
+
+option('disable_string_view', type: 'boolean', value: false,
+       description: 'Disable string view')
